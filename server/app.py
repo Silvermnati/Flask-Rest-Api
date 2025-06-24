@@ -1,13 +1,12 @@
 from flask import Flask
 from flask_migrate import Migrate
-from flask_jwt_extended import JWTExtended
+from flask_jwt_extended import JWTManager
 from flask_sqlalchemy import SQLAlchemy
-from config import Config
-
+from server.config import Config
 # Initialize extensions
 db = SQLAlchemy()
 migrate = Migrate()
-jwt = JWTExtended()
+jwt = JWTManager()
 
 def create_app(config_class=Config):
     """Application factory function"""
